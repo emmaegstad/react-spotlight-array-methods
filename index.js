@@ -37,8 +37,5 @@ export const filterAu = (countries) => {
 // REQS: use .reduce
 
 export const getSneaks = (brands) => {
-  return brands.reduce((acc, brand) => {
-    acc.push(...brand.shoes);
-    return acc;
-  }, []);
+  return brands.reduce((acc, brand) => [...acc, ...brand.shoes], []);
 };
